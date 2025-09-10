@@ -1,0 +1,348 @@
+/* Theme Variables */
+:root {
+  --main-color: linear-gradient(to right, #ba7eff, #00eeff, #ffbb00, #ff00b3, #c300ff);
+  --background-color: #f3f3f3;
+  --text-color-main: black;
+  --text-color-second: rgb(88, 88, 88);
+  --border-color: #c4c4c4;
+  --active-tab-color: #0990ff;
+  --button-bg-color: #fff5e71a;
+  --button-hover-bg-color: #fff5e7;
+  --shadow: rgba(184, 184, 184, 0.849);
+
+}
+
+.dark-mode {
+  --background-color: rgb(17, 17, 19);
+  --text-color-main: rgb(255, 255, 255);
+  --border-color: rgb(48, 48, 48);
+  --sidebar-bg: var(--sidebar-bg-dark);
+  --button-bg-color: #211c311a;
+  --button-hover-bg-color: #211c31;
+  --text-color-main: white;
+  --text-color-second: rgb(145, 145, 145);
+  --shadow: rgba(107, 107, 107, 0.692);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0px;
+  background: var(--background-color);
+  color: var(--text-color-main);
+  font-size: 1em;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.top-bar .top-bar-title {
+  margin-left: 20px;
+  
+  font-family: "Google Sans Code", monospace;
+}
+.top-bar-title::after {
+  content: "BSCE 1D PORTAL";
+}
+
+.top-bar-btn {
+    margin-left: 12px;
+    background: none;
+    border: none;
+    color: var(--text-color-main);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.top-bar-btn i {
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    .top-bar-title::after {
+      font-size: 0.8em;
+        content: "BSCE1DP";
+    }
+    .top-bar-title {
+        font-size: 1.2em;
+    }
+    .top-bar-title::before {
+        content: "";
+    }
+}
+
+/* Hero Section */
+.hero {
+  height: 60vh;
+  /* Was 100vh, now shorter */
+  background: url("../Images/new.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.color-stripes {
+    width: 100%;
+    height: 25px; /* Adjust height if needed */
+    background: linear-gradient(
+        to bottom,
+        white 0%,
+        white 20%,
+        #007BFF 20%,
+        #007BFF 40%,
+        orange 40%,
+        orange 60%,
+        #007BFF 60%,
+        #007BFF 80%,
+        white 80%,
+        white 100%
+    );
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* darker + bigger shadow */
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Hero Overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+  font-family: "Google Sans Code", monospace;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin: 10px 0 20px;
+  font-family: "Google Sans Code", monospace;
+}
+
+.hero button {
+  padding: 10px 20px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00c3ff;
+  color: white;
+  font-family: "Google Sans Code", monospace;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #009fce;
+}
+/* Hero Layout */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* space between logo and text */
+  text-align: left;
+}
+
+.hero-logo {
+  width: 250px;
+  height: auto;
+  margin-right: -50px;
+  border-radius: 10px; /* optional: smooth edges */
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: rgba(102, 99, 99, 0.144);
+  backdrop-filter: blur(2px);
+  border-radius: 14px;
+  box-shadow: 0 25px rgba(102, 99, 99, 0.144);
+}
+
+#userName {
+  font-weight: 200;
+  font-size: 1em;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+  font-size: 2em;
+  margin: 0;
+  font-family: "Google Sans Code", monospace;
+}
+
+.hero p {
+  font-size: 0.8em;
+  margin: 10px 0 20px;
+  font-family: "Google Sans Code", monospace;
+}
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-logo {
+    width: 150px;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .hero-text {
+    
+    align-items: center;
+  }
+
+  #userName {
+  font-weight: 200;
+  font-size: 1em;
+}
+}
+
+.dark-mode-btn {
+  background: none;
+  border: none;
+  color: var(--text-color-main);
+  cursor: pointer;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  /* clickable area */
+  font-size: 0.8em;
+  /* size of the icon */
+  line-height: 1;
+  /* prevent collapsing */
+  min-width: 40px;
+  /* ensure clickable size */
+  min-height: 40px;
+  /* ensure clickable size */
+}
+
+.dark-mode-btn:hover {
+  color: var(--active-tab-color);
+}
+
+.officers {
+  padding: 50px 20px;
+  background-color: var(--background-color);
+  color: var(--text-color-main);
+  text-align: center;
+}
+
+.officers h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-family: "Google Sans Code", monospace;
+}
+
+.officers-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.officer-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 4px 8px var(--shadow);
+  text-align: center;
+  
+}
+
+.officer-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.officer-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+  font-family: "Google Sans Code", monospace;
+}
+
+.officer-card p {
+  margin: 5px 0 0;
+  font-size: 1em;
+  font-family: "Google Sans Code", monospace;
+  color: var(--text-color-second);
+}
+/* Default (desktop) stays as it is */
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .officer-card {
+    display: grid;
+    grid-template-columns: 60px 1fr; /* small image + text */
+    grid-template-areas:
+      "img role"
+      "img name";
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    row-gap: 0; /* space between role and name */
+    column-gap: 10px; /* space between image and text */
+  }
+
+  .officer-card img {
+    grid-area: img;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0;
+  }
+
+  .officer-card p {
+    grid-area: name;
+    font-size: 0.9em;
+    margin: 0;
+  }
+
+  .officer-card h3 {
+    grid-area: role;
+    font-size: 1em;
+    margin: 0;
+  }
+}
