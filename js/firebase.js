@@ -99,10 +99,10 @@ onAuthStateChanged(auth, async (user) => {
             const nameSpan = document.getElementById("userName");
             nameSpan.textContent = displayName;
         }
-document.getElementById("signOutBtn").addEventListener("click", async () => {
-    console.log("EE")
-  signOutAccount();
-});
+        document.getElementById("signOutBtn").addEventListener("click", async () => {
+            console.log("EE")
+            signOutAccount();
+        });
     } else {
         if (typeof on_login == 'undefined') {
             window.location.href = `login.html`;
